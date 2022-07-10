@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:blockpatterntest/domain/user/repository/i_user_repository.dart';
+import 'package:blockpatterntest/domain/typicode/repository/i_user_repository.dart';
 import 'package:blockpatterntest/model/typicode/user_api_freezed_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dartz/dartz.dart';

@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:blockpatterntest/application/typicode/typi_code_user_bloc.dart';
 import 'package:blockpatterntest/network/apiresponse/api_response.dart';
-import 'package:blockpatterntest/domain/user/services/i_user_service.dart';
-import 'package:blockpatterntest/infrastructure/user/repository/user_repository.dart';
+import 'package:blockpatterntest/domain/typicode/services/i_user_service.dart';
+import 'package:blockpatterntest/infrastructure/typicode/repository/user_repository.dart';
 import 'package:blockpatterntest/model/typicode/user_api_freezed_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';

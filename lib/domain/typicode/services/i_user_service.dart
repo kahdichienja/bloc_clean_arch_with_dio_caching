@@ -1,4 +1,4 @@
-import 'package:blockpatterntest/infrastructure/user/services/user_service.dart';
+import 'package:blockpatterntest/infrastructure/typicode/services/user_service.dart';
 import 'package:blockpatterntest/network/base_api.dart';
 import 'package:blockpatterntest/network/services/config/api_path_strings.dart';
 import 'package:dio/dio.dart';
