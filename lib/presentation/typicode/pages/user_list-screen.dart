@@ -12,7 +12,7 @@ class TestUSerData extends StatelessWidget {
       body: BlocConsumer<TypiCodeUserBloc, TypiCodeUserState>(
         listener: (context, state) {
 
-          context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
+          // context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
         },
         builder: (context, state) {
           if (state is TypiCodeUserInitialState) {
