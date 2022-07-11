@@ -1,4 +1,3 @@
-
 import 'package:blockpatterntest/application/typicode/typi_code_user_bloc.dart';
 import 'package:blockpatterntest/model/typicode/user_api_freezed_model.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,11 @@ class TestUSerData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<TypiCodeUserBloc, TypiCodeUserState>(
+      body: BlocConsumer<TypiCodeUserBloc, TypiCodeUserState>(
+        listener: (context, state) {
+
+          context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
+        },
         builder: (context, state) {
           if (state is TypiCodeUserInitialState) {
             context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
@@ -30,7 +33,7 @@ class TestUSerData extends StatelessWidget {
               child: Text("${state.message}"),
             );
           }
-          return const Text("Error");
+          return const Text("err");
         },
       ),
     );
@@ -62,3 +65,25 @@ class TestUSerData extends StatelessWidget {
     );
   }
 }
+
+
+// BlocBuilder<TypiCodeUserBloc, TypiCodeUserState>(
+//   builder: (context, state) {
+// if (state is TypiCodeUserInitialState) {
+//   context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
+//   return const CircularProgressIndicator();
+// } else if (state is TypiCodeUserLoadingState) {
+//   return const Center(child: CircularProgressIndicator());
+// } else if (state is TypiCodeUserLoadedState) {
+//   return state.apiResult.fold(
+//     (failure) => Center(child: Text("$failure")),
+//     (users) => w(users,
+//         callback: () async => context
+//             .read<TypiCodeUserBloc>()
+//             .add(LoadTypiCodeUserEvent())),
+//   );
+// } else if (state is TypiCodeUserErrorState) {
+//   return Center(
+//     child: Text("${state.message}"),
+//   );
+// }
