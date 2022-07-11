@@ -11,7 +11,6 @@ class TestUSerData extends StatelessWidget {
     return Scaffold(
       body: BlocConsumer<TypiCodeUserBloc, TypiCodeUserState>(
         listener: (context, state) {
-
           // context.read<TypiCodeUserBloc>().add(LoadTypiCodeUserEvent());
         },
         builder: (context, state) {
@@ -23,10 +22,12 @@ class TestUSerData extends StatelessWidget {
           } else if (state is TypiCodeUserLoadedState) {
             return state.apiResult.fold(
               (failure) => Center(child: Text("$failure")),
-              (users) => w(users,
-                  callback: () async => context
-                      .read<TypiCodeUserBloc>()
-                      .add(LoadTypiCodeUserEvent())),
+              (users) => w(
+                users,
+                callback: () async => context.read<TypiCodeUserBloc>().add(
+                      LoadTypiCodeUserEvent(),
+                    ),
+              ),
             );
           } else if (state is TypiCodeUserErrorState) {
             return Center(
