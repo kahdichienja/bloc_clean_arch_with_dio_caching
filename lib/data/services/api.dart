@@ -1,7 +1,7 @@
 // ignore_for_file: sort_constructors_first
 
-import 'package:blockpatterntest/network/rest_client.dart';
-import 'package:blockpatterntest/network/services/config/api_path_strings.dart';
+import 'package:blockpatterntest/data/rest_client.dart';
+import 'package:blockpatterntest/data/services/config/api_path_strings.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

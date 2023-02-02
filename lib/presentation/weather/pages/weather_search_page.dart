@@ -58,8 +58,7 @@ class WeatherSearchPage extends StatelessWidget {
           "${weather.temperatureCelsius.toStringAsFixed(1)} °C",
           style: const TextStyle(fontSize: 80),
         ),
-        RaisedButton(
-          color: Colors.lightBlue[100],
+        TextButton(
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(

@@ -1,4 +1,4 @@
-import 'package:blockpatterntest/network/base_api.dart';
+import 'package:blockpatterntest/data/base_api.dart';
 import 'package:dio/dio.dart';
 
 

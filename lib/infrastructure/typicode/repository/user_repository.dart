@@ -2,7 +2,7 @@
 
 import 'package:blockpatterntest/application/typicode/typi_code_user_bloc.dart';
 import 'package:blockpatterntest/model/typicode/user_api_freezed_model.dart';
-import 'package:blockpatterntest/network/apiresponse/api_response.dart';
+import 'package:blockpatterntest/data/apiresponse/api_response.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class UserRepository {

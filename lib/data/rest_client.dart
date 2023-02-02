@@ -1,7 +1,7 @@
 // ignore_for_file: always_declare_return_types, type_annotate_public_apis, use_late_for_private_fields_and_variables, sort_constructors_first, non_constant_identifier_names
 
-import 'package:blockpatterntest/network/interceptors/error_intercepter.dart';
-import 'package:blockpatterntest/network/interceptors/logging_interceptor.dart';
+import 'package:blockpatterntest/data/interceptors/error_intercepter.dart';
+import 'package:blockpatterntest/data/interceptors/logging_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 

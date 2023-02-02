@@ -5,7 +5,7 @@ This creates an instance of Api and provides to children classes
 */
 
 
-import 'package:blockpatterntest/network/services/api.dart';
+import 'package:blockpatterntest/data/services/api.dart';
 
 class BaseApi {
   Api api = Api();

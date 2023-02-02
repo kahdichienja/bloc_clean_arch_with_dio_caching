@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
@@ -12,25 +14,19 @@ part 'typi_code_user_state.dart';
 class TypiCodeUserBloc extends Bloc<TypiCodeUserEvent, TypiCodeUserState> {
   final IUserRepository apiTestRepo;
 
-  TypiCodeUserBloc(
-    this.apiTestRepo,
-  ) : super(TypiCodeUserInitialState()) {
-    on<TypiCodeUserEvent>(
-      (event, emit) async {
+  TypiCodeUserBloc(this.apiTestRepo) : super(TypiCodeUserInitialState()) {
+    on<TypiCodeUserEvent>((event, emit) async {
         if (event is LoadTypiCodeUserEvent) {
           emit(TypiCodeUserLoadingState());
-          
           try {
-            
             Either<Failure, List<TestAPIUserModel>>? apiResult = await apiTestRepo.getAllUsers();
             emit(TypiCodeUserLoadedState(apiResult: apiResult!));
-         
           } catch (e) {
             if (e is SocketException) {
               emit(const TypiCodeUserErrorState('Networ error'));
-            }else if(e is FormatException){
+            } else if (e is FormatException) {
               emit(const TypiCodeUserErrorState('Data not in the right format error'));
-            }else{
+            } else {
               emit(const TypiCodeUserErrorState('something is not right ..'));
             }
           }
